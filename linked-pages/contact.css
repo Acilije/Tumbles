@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f3f3f3;
+}
+
+#navbar-menu li {
+    display: block;
+    text-align: center;
+}
+
+.main-logo {
+    width: 100px;
+}
+
+.adress-phone-email {
+    margin: 0px;
+    padding: 100px 50px;
+}
+
+.adress-phone-email h4 {
+    margin: 10px 0;
+    box-sizing: border-box;
+    color: #425BB5;
+    display: block;
+    font-family: 'Open Sans', serif;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.adress-phone-email p,a {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form {
+    padding: 100px;
+    background: white;
+}
+
+footer span {
+    color: #425BB5;
+    display: block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #337ab7;
+    text-decoration: none;
+    font-family: 'Oduda-Regular', serif;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.copyright a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+
+ /* #f3f3f3 
+ vidi i preloader*/
