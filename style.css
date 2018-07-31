@@ -33,18 +33,313 @@ b:after {
     margin-bottom: .15em;
 } */
 
-/* nav button span {
-    filter: invert(100%);
-} */
 
-#navbar-menu li {
-    display: block;
-    text-align: center;
+
+#wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: white;
 }
 
-.main-logo {
-    width: 100px;
- }
+#anime1 {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: anime1 0.6s linear infinite;
+    opacity: 0;
+}
+
+#anime2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: anime2 0.6s linear infinite;
+    opacity: 0;
+}
+
+@keyframes anime1 {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+        border-radius: 50%;
+    }
+    100% {
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+        border-radius: 50%;
+    }
+}
+
+@keyframes anime2 {
+    0% {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        opacity: 0.5;
+    }
+    100% {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        opacity: 0;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+[alt="x"] {
+    display: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    transform: translateY(10px);
+}
+
+[alt="logo"] {
+    display: none;
+    cursor: pointer;
+}
+
+[alt="menu"] {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+[alt="logo-animation"] {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+header {
+    position: relative;
+}
+
+header>ul {
+    padding: 0;
+    list-style-type: none;
+    background-color: #222225;
+    /* display: none; */
+    overflow: hidden;
+}
+
+header>ul li {
+    color: #e4e4e4;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+header>ul li:nth-child(1),
+li:nth-child(2) {
+    border-bottom: 0.2px solid #333;
+    overflow: hidden;
+    /*zbog li no.2 koja ima i koji je float*/
+}
+
+header>ul li>.locations {
+    display: none;
+    width: inherit;
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+header>ul li>.locations p {
+    padding: 10px;
+    /* margin: 1px solid grey;  Ne radi pa sam morao u js da dam border*/
+    opacity: 0;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+
+/* header > ul li > .locations p:hover {
+    transform: translateX(2px);
+} */
+
+header>ul li:nth-child(2) i {
+    float: right;
+    transform: rotate(-90deg)
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.facebook {
+    position: absolute;
+    top: 25px;
+    right: 6%;
+    font-size: 16px;
+}
+
+.li {
+    display: inline-block;
+}
+
+.article{
+    display: inline-block;
+    position: absolute;
+    top: 26%;
+    left: 30%;
+
+}
+.article > p:nth-child(1){
+    color: #8BC832;
+    font-weight: 600;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+.article > p {
+    display: inline-block;
+    padding: 5px 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 12px;
+}
+#second { /* <= druga listica tj drugi p */
+    position: relative;
+}
+.locations2{
+    z-index: 5;
+    position: absolute;
+    top: 40px;
+    left: -10px;
+    width: 220px;
+    padding: 5px 10px;
+    background-color: #222225;
+    display: none;
+    opacity: 0;
+}
+.locations2 p {
+    color: #e4e4e4 ;
+    padding: 12px 10px;
+    font-family: 'Oduda-SemiBold', sans-serif; /*Fali Oduda*/
+    font-size: 13px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.facebook2 {
+    position: absolute;
+    top: 3px;
+    right: -2px;
+}
+@media screen and (min-width: 992px) {
+    [alt="menu"] {
+        display: none;
+    }
+    [alt="x"] {
+        display: none;
+    }
+    [alt="logo-animation"] {
+        display: none;
+    }
+    [alt="logo"] {
+        display: inline-block;
+        width: 200px;
+        height: 60px;
+        margin-left: 7%;
+        margin-top: 1%;
+    }
+    /* header > ul {               media queries ne rade kako treba na 992px sirine pa sam u js resavao
+        display: inline-block;
+        height: 40px;
+        background-color: blue;
+    }
+    header > ul li {
+        color: black;
+        display: inline-block;
+        border: 0px;
+        overflow: visible;
+    } */
+}
+
+
+
+
+
+
+.globally-locally {
+    font-size: 53px;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 80px;
+
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    border-right: 2px solid #F78200;
+    padding: 7px 0;
+
+}
+.globally-locally span {
+    font-family: 'Oduda-SemiBold';
+    font-size: 53px;
+    font-weight: 300;
+    color: #8BC832;
+}
+.change {
+    display: inline-block;
+    overflow: hidden;
+    width: 197px;
+    color: #F78200;
+    transform: translate(0,7px);
+}
+
+@keyframes hide {
+    0% {
+        width: 197px;
+    }
+    100% {
+        width: 0px;
+    }
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: 80px;
+    }
+}
+
+
+
+
+
+
 
 .headline {
     margin-top: 50px;
@@ -110,16 +405,16 @@ b:after {
     margin: 0 auto; 
 }
 
-header h1 {
+/* .globally-locally {
     font-family: 'Oduda-SemiBold', serif;
     font-size: 53px;
     line-height: 60px;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 80px;
-}
+} */
 
-header h5 {
+.under-header h5 {
     font-family: 'Oduda-Regular', serif;
     font-size: 15px;
     line-height: 20px;
