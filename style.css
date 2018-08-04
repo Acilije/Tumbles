@@ -164,6 +164,11 @@ li:nth-child(2) {
     /*zbog li no.2 koja ima i koji je float*/
 }
 
+#hrefToContantUs{
+    text-decoration: none;
+    color: #e4e4e4;
+}
+
 header>ul li>.locations {
     display: none;
     width: inherit;
@@ -230,6 +235,13 @@ header>ul li:nth-child(2) i {
 #second { /* <= druga listica tj drugi p */
     position: relative;
 }
+#third {
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+    font-size: 14px;
+
+}
 .locations2{
     z-index: 5;
     position: absolute;
@@ -251,8 +263,8 @@ header>ul li:nth-child(2) i {
 }
 .facebook2 {
     position: absolute;
-    top: 3px;
-    right: -2px;
+    top: 25%;
+    right: -1%;
 }
 @media screen and (min-width: 992px) {
     [alt="menu"] {
@@ -299,7 +311,6 @@ header>ul li:nth-child(2) i {
     margin: 0 auto;
     display: block;
     position: relative;
-    border-right: 2px solid #F78200;
     padding: 7px 0;
 
 }
@@ -312,9 +323,11 @@ header>ul li:nth-child(2) i {
 .change {
     display: inline-block;
     overflow: hidden;
-    width: 197px;
+    width: 200px;
     color: #F78200;
     transform: translate(0,7px);
+    border-right: 2px solid #F78200;
+
 }
 
 @keyframes hide {

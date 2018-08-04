@@ -15,7 +15,8 @@ var menu = document.querySelector('[alt="menu"]'),
     str = 'menu',
     arrOfLi = ['FRANCHISING', 'TUMBLES LOCATIONS', 'CONTACT US'],
     arrOfP = ['Princeton, New Jersey', 'Glen Rock, New Jersey', 'Clinton, New Jersey', 'Enclitas, New Jersey', 'Alexandria, Virginia', 'Arlington, Virginia', 'Hillsdale, New Jersey'],
-    remove
+    remove,
+    a
 
 //Sve ovo ovako radjeno jer media queris na min-width:992px nije htelo da radi
 
@@ -37,6 +38,15 @@ if (document.documentElement.clientWidth >= 992) {
             var textNodeLi = document.createTextNode(arrOfLi[i])
             newLi.appendChild(textNodeLi)
             newLi.innerHTML += '<i style="font-size:18px" class="fa facebook2">&#xf107;</i>'
+            newUl.appendChild(newLi)
+        } else if (i == 2) {
+            var newLi = document.createElement('p')
+            var a = document.createElement('a')
+            a.setAttribute('id', 'third')
+            a.setAttribute('href', './linked-pages/contact.html')
+            var textNodeLi = document.createTextNode(arrOfLi[i])
+            a.appendChild(textNodeLi)
+            newLi.appendChild(a)
             newUl.appendChild(newLi)
         } else {
             var newLi = document.createElement('p')
@@ -132,7 +142,7 @@ window.addEventListener('resize', () => {
                     locations2.style.opacity = '1'
                     locations2.style.transition = '0.5s linear'
                     window.addEventListener('click', (e) => {
-                        if (e.target.matches('.locations2') == false) {
+                        if (e.target.matches('.locations2') == false && e.target.matches('.facebook2' == false)) {
                             locations2.style.opacity = '0'
                             setTimeout(() => {
                                 locations2.style.display = 'none'
@@ -179,7 +189,7 @@ window.addEventListener('resize', () => {
                 locations2.style.opacity = '1'
                 locations2.style.transition = '0.5s linear'
                 window.addEventListener('click', (e) => {
-                    if (e.target.matches('.locations2') == false) {
+                    if (e.target.matches('.locations2') == false && e.target.mathces('.facebook2' == false)) {
                         locations2.style.opacity = '0'
                         setTimeout(() => {
                             locations2.style.display = 'none'
@@ -285,7 +295,7 @@ arrow.addEventListener('click', () => {
     if (locations.style.display == '' || locations.style.display == 'none') { // <= '' pocetni uslov jer samo sa none ne radi
         arrow.style.transform = 'rotate(2deg)' // <= Enigma kako ne radi za 90deg nego za 2deg , najverovatnije je do slike
         locations.style.display = 'block'
-        ul.style.height = '420px'
+        ul.style.height = '540px'
         ul.style.transition = ''
         setTimeout(() => {
             for (i = 0; i < p.length; i++) {
@@ -306,65 +316,53 @@ arrow.addEventListener('click', () => {
     }
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
 var changeText = true;
 setInterval(() => {
-    document.querySelector('.globally-locally').style.animation = 'slide .5s ease-out  1 forwards'
+    document.querySelector('.globally-locally').style.animation = 'slide .5s ease-out 1 forwards'
     document.querySelector('.change').style.animation = 'hide .5s ease-out 1 forwards'
     setTimeout(() => {
         if (changeText) {
             document.querySelector('.globally-locally').animate([{
-                    marginLeft: '80px'
-                },
-                {
-                    marginLeft: '0px'
-                }
+                marginLeft: '80px'
+            },
+            {
+                marginLeft: '0px'
+            }
             ], {
-                duration: 500,
-                easing: 'ease-out',
-                fill: 'forwards',
-            })
+                    duration: 500,
+                    easing: 'ease-out',
+                    fill: 'forwards',
+                })
             document.querySelector('.change').animate([{
-                    width: '0px'
-                },
-                {
-                    width: '162px'
-                }
+                width: '0px'
+            },
+            {
+                width: '165px'
+            }
             ], {
-                duration: 500,
-                easing: 'ease-out',
-                fill: 'forwards'
-            })
+                    duration: 500,
+                    easing: 'ease-out',
+                    fill: 'forwards'
+                })
             document.querySelector('.change').textContent = 'locally.'
             changeText = false
         } else {
             document.querySelector('.globally-locally').animate([
-                {marginLeft: '80px'},
-                {marginLeft: '0px'}
-            ],{
-                duration: 500,
-                easing: 'ease-out',
-                fill: 'forwards'
-            })
+                { marginLeft: '80px' },
+                { marginLeft: '0px' }
+            ], {
+                    duration: 500,
+                    easing: 'ease-out',
+                    fill: 'forwards'
+                })
             document.querySelector('.change').animate([
-                {width: '0px'},
-                {width: '197px'}
-            ],{
-                duration: 500,
-                easing: 'ease-out',
-                fill: 'forwards'
-            })
+                { width: '0px' },
+                { width: '200px' }
+            ], {
+                    duration: 500,
+                    easing: 'ease-out',
+                    fill: 'forwards'
+                })
             document.querySelector('.change').textContent = 'globally.'
             changeText = true
         }
